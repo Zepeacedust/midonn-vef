@@ -1,6 +1,8 @@
-from flask import Flask
-import urllib.request, json
+from flask import Flask, render_template as rend
+import requests,json
 app = Flask(__name__)
+
+stodvar = json.load(requests.get("https://apis.is/petrol").content)
 
 @app.route('/')
 def hello():
