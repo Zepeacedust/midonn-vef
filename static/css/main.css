@@ -1,0 +1,10 @@
+body{
+    background-color: beige;
+}
+.stadir {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.adili {
+    background-color: #ff00ff;
+}

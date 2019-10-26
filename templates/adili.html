@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for stadur in stadir %}
+{% if stadur.company == company %}
+<div class="stadur">
+    <a href="stadur/{{ stadur.key }}">{{ stadur.name }}<a>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for adili in adilar %}
-<div>
-    <p>adili</p>
+<div class="stadir">
+    {% for adili in adilar %}
+    <div class="adili">
+        <a href="{{ adili }}">{{ adili }}</a>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+<p>Verð á bensíni: {{ max_bens.bensin95 }}</p>
+<p>
+    Verð á dísel: {{ max_dies.diesel }}
+</p>
 {% endblock %}
