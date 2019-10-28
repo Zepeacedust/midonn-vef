@@ -16,7 +16,7 @@ def debug():
     return str(stodvar)
 @app.route('/')
 def hello():
-    return rend("index.html", adilar=set(map(lambda x: x["company"], stodvar)), min_dies = max(stodvar, key=lambda x: x["diesel"]), min_bens=max(stodvar, key=lambda x: x["bensin95"]))
+    return rend("index.html", adilar=set(map(lambda x: x["company"], stodvar)), min_dies = min(stodvar, key=lambda x: x["diesel"]), min_bens=min(stodvar, key=lambda x: x["bensin95"]))
 @app.route("/<adili>")
 def adili(adili):
     return rend("adili.html", company=adili, stadir=stodvar)
