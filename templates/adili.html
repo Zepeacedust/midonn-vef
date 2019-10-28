@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for stadur in stadir %}
-{% if stadur.company == company %}
-<div class="stadur">
-    <a href="stadur/{{ stadur.key }}">{{ stadur.name }}<a>
-</div>
-{% endif %}
-{% endfor %}
+<table>
+    <tr>
+        <th>
+            Nafn
+        </th>
+        <th>
+            verð á bensín
+        </th>
+        <th>
+            verð á disel
+        </th>
+    </tr>
+    {% for stadur in stadir %}
+    {% if stadur.company == company %}
+    <tr class="stadur">
+        <td>   
+            <a href="stadur/{{ stadur.key }}">{{ stadur.name }}<a>
+        </td>
+        <td>
+            {{ stadur.bensin95 }}
+        </td>
+        <td>
+            {{ stadur.diesel }}
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
 {% endblock %}
