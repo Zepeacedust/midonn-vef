@@ -4,7 +4,10 @@
 <div class="stadir">
     {% for adili in adilar %}
     <div class="adili">
-        <a href="{{ adili }}">{{ adili }}</a>
+        <a href="{{ adili }}">
+            <img src="/static/img/{{ adili }}.png" alt="{{ adili }}" width="200" height="200">
+            {{ adili }}
+        </a>
     </div>
     {% endfor %}
 </div>

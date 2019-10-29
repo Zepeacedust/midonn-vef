@@ -19,7 +19,9 @@ def hello():
     return rend("index.html", adilar=set(map(lambda x: x["company"], stodvar)), min_dies = min(stodvar, key=lambda x: x["diesel"]), min_bens=min(stodvar, key=lambda x: x["bensin95"]))
 @app.route("/<adili>")
 def adili(adili):
-    return rend("adili.html", company=adili, stadir=stodvar)
+    if adili in map(lambda x: x["company"],stodvar):
+        return rend("adili.html", company=adili, stadir=stodvar)
+    else: return page_not_found(404)
 @app.route("/stadur/<stadur>")
 def stadur(stadur):
     for stad in stodvar:
